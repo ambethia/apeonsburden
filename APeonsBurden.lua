@@ -8,14 +8,14 @@ f:SetScript("OnEvent", function(self, event, ...)
 end)
 
 function f:QUEST_WATCH_UPDATE(questIndex)
-  checkForUpdate = 1
+  checkForUpdate = questIndex
 end
 
-function f:QUEST_LOG_UPDATE(questIndex)
+function f:QUEST_LOG_UPDATE(...)
   if checkForUpdate then
     local allComplete = 1
-    for boardIndex = 1, GetNumQuestLeaderBoards(questIndex) do
-      local objComplete = select(3, GetQuestLogLeaderBoard(boardIndex, questIndex))
+    for boardIndex = 1, GetNumQuestLeaderBoards(checkForUpdate) do
+      local objComplete = select(3, GetQuestLogLeaderBoard(boardIndex, checkForUpdate))
       if not objComplete then allComplete = nil; end
     end
     if allComplete then PlaySoundFile(WORK_COMPLETE); end
