@@ -1,4 +1,4 @@
-## Interface: 30300
+## Interface: 40000
 ## Title: A Peon's Burden
 ## Author: Jason L Perry
 ## Notes: Let's you know that your work is complete
