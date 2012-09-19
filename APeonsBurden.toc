@@ -2,6 +2,14 @@
 ## Title: A Peon's Burden
 ## Author: Jason L Perry
 ## Version: @project-version@
-## Notes: Let's you know that your work is complete
+## Notes: Let's you know when your work is complete!
+## X-Website: http://ambethia.com/
+## X-Email: jasper@ambethia.com
+## X-Category: Questing
+
+## SavedVariables: APeonsBurdenDB
 
 APeonsBurden.lua
+
+tekKonfig\tekKonfig.xml
+Config.lua
