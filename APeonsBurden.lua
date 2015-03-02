@@ -1,5 +1,5 @@
-local WORK_COMPLETE = "Sound\\Creature\\Peon\\PeonBuildingComplete1.wav"
-local WORK_WORK     = "Sound\\Creature\\Peon\\PeonYes3.wav"
+local WORK_COMPLETE = "Sound\\Creature\\Peon\\PeonBuildingComplete1.ogg"
+local WORK_WORK     = "Sound\\Creature\\Peon\\PeonYes3.ogg"
 
 local defaults, db = { playComplete = true, playWork = false }
 
