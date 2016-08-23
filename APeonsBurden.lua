@@ -31,6 +31,25 @@ function frame:QUEST_LOG_UPDATE(...)
   checkForUpdate = nil
 end
 
+frame:RegisterEvent("UNIT_QUEST_LOG_CHANGED")
+function frame:UNIT_QUEST_LOG_CHANGED(unitID)
+  if unitID.lower() ~= "player" then return end
+  if checkForUpdate then
+    local allComplete = 1
+    for boardIndex = 1, GetNumQuestLeaderBoards(checkForUpdate) do
+      local objComplete = select(3, GetQuestLogLeaderBoard(boardIndex, checkForUpdate))
+      if not objComplete then allComplete = nil; end
+    end
+    if allComplete then
+      if db.playComplete then PlaySoundFile(WORK_COMPLETE) end
+    else
+      if db.playWork then PlaySoundFile(WORK_WORK) end
+    end
+  end
+  checkForUpdate = nil
+end
+
+
 frame:RegisterEvent("ADDON_LOADED")
 function frame:ADDON_LOADED(addon)
   if addon:lower() ~= "apeonsburden" then return end
