@@ -33,7 +33,7 @@ end
 
 frame:RegisterEvent("UNIT_QUEST_LOG_CHANGED")
 function frame:UNIT_QUEST_LOG_CHANGED(unitID)
-  if unitID.lower() ~= "player" then return end
+  if unitID:lower() ~= "player" then return end
   if checkForUpdate then
     local allComplete = 1
     for boardIndex = 1, GetNumQuestLeaderBoards(checkForUpdate) do
